@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>To do app</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<script src="script.js"></script>
+	<link rel="stylesheet" href="">
+</head>
+<body ng-app="myApp">
+
+	<div class="container">
+		<div ng-controller="MainCtrl" class="col-xs-6 col-xs-offset-3">
+			<h1 class="text-center"> My todo list</h1>
+			{{greeting}}
+		   <div class="input-group">
+		      <input type="text" class="form-control" ng-model="textBox" placeholder="an item to do">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default" type="button" ng-click="addItem()">
+			        Add item 
+			        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+		        </button>
+		      </span>
+		    </div><!-- /input-group -->
+			<ul class="list-group">
+			  <li class="list-group-item clearfix" ng-repeat="item in todos">
+			  	{{item}}
+		        <button class="btn btn-danger pull-right" type="button" ng-click="deleteItem(item)">
+			        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+		        </button>
+			  </li>			  
+			</ul>
+		</div>
+	</div>
+	
+</body>
+</html>
